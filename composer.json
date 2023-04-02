@@ -1,0 +1,44 @@
+{
+  "name": "techbeans/laravel-database-configuration",
+  "description": "Get the database configuration connected in laravel",
+  "type": "library",
+  "version": "1.0.0",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "adachi",
+      "email": "tatsuru.adachi@techbeans.co.jp"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Techbeans\\LaravelDatabaseConfiguration\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Techbeans\\LaravelDatabaseConfiguration\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "doctrine/dbal": "^3.2.7",
+    "illuminate/database": "^8.0",
+    "illuminate/support": "^8.0",
+    "illuminate/contracts": "^8.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Techbeans\\LaravelDatabaseConfiguration\\app\\Providers\\DbConfigServiceProvider"
+      ],
+      "aliases": {
+        "DbConfig": "Techbeans\\LaravelDatabaseConfiguration\\app\\Facades\\DbConfig"
+      },
+      "commands": [
+        "Techbeans\\LaravelDatabaseConfiguration\\app\\Console\\Commands\\DbConfigCommand"
+      ]
+    }
+  }
+}

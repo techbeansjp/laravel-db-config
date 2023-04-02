@@ -1,0 +1,23 @@
+# 常に実行します。
+# 作業内容は、format.yml を呼び出し、実行します。
+name: メインアクション
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  main:
+    concurrency: main
+    # main は、何もしない
+    runs-on: ubuntu-latest
+    steps:
+      - name: "main action"
+        run: echo "actions start"
+
+  call-workflow:
+    # develop, staging, mainブランチ pull_request が発生した場合のみ実行される
+    # 同一ディレクトリにある format.yml を呼び出し、実行する
+    needs: [main]
+    uses: ./.github/workflows/format.yml
+    if: github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'develop') || contains(github.event.pull_request.head.ref, 'staging') || contains(github.event.pull_request.head.ref, 'main')

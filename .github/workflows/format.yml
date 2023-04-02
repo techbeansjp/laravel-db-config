@@ -1,0 +1,49 @@
+# PHPコードを強制的に自動整形します。
+# このワークフローは、develop, staging, mainブランチに対してのプルリクエストのみ実行されます。
+# src/.php-cs-fixer.dist.php が存在する場合は、その設定を使用します。
+# サポートするPHPのバージョンは、8以上です。
+# このワークフローは、main.yml によって実行されることを想定しています。
+name: PHPコード整形
+
+on:
+  workflow_call:
+
+defaults:
+  run:
+    working-directory: ./src
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - name: src/.php-cs-fixer.dist.php が存在するか確認
+        id: fixer-check
+        run: test -f src/.php-cs-fixer.dist.php && echo "::set-output name=exists::true" || exit 0
+
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v2
+
+      - name: PHP 8.0をインストール
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+
+      - name: PHP-CS-Fixerをインストール
+        run: composer global require friendsofphp/php-cs-fixer
+
+      - name: PHPコードを自動整形
+        run: php ~/.composer/vendor/bin/php-cs-fixer fix --diff --diff-format=udiff --dry-run --verbose --config=src/.php-cs-fixer.dist.php
+
+      - name: 変更があるか確認
+        id: check
+        run: test -n "$(git status --porcelain)" && echo "::set-output name=changed::true" || exit 0
+
+      - name: 変更がある場合は、自動整形したコードをコミット
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git status
+          git add .
+          git commit -m "PHPコードを自動整形"
+          git push
