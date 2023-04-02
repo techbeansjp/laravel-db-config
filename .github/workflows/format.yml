@@ -47,7 +47,7 @@ jobs:
           git status | grep modified || echo "GIT_STATUS_RESULT=$(echo $?)" >> $GITHUB_ENV
 
       - name: 変更がある場合は、自動整形したコードをコミット
-        if: env.GIT_STATUS_RESULT == '0'
+        if: steps.fixer-check.outputs.exists == 'true' && env.GIT_STATUS_RESULT == '0'
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
