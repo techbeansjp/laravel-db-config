@@ -12,12 +12,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "Techbeansjp\\LaravelDatabaseConfiguration\\": "src"
+      "Techbeansjp\\": "vendor/techbeansjp/src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Techbeansjp\\LaravelDatabaseConfiguration\\Tests\\": "tests"
+      "Techbeansjp\\Tests\\": "vendor/techbeansjp/tests"
     }
   },
   "require": {
@@ -30,10 +30,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "App\\Providers\\DbConfigServiceProvider"
+        "Techbeansjp\\LaravelDatabaseConfiguration\\App\\Providers\\DbConfigServiceProvider"
       ],
       "aliases": {
-        "DbConfig": "App\\Facades\\DbConfigFacade"
+        "DbConfig": "Techbeansjp\\LaravelDatabaseConfiguration\\App\\Facades\\DbConfigFacade"
       }
     }
   }
