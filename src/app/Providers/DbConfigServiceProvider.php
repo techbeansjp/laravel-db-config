@@ -3,6 +3,7 @@
 namespace Techbeansjp\LaravelDatabaseConfiguration\App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Techbeansjp\LaravelDatabaseConfiguration\App\Console\Commands\DbConfigCommand;
 use Techbeansjp\LaravelDatabaseConfiguration\App\Services\DbConfigService;
 
 class DbConfigServiceProvider extends ServiceProvider
