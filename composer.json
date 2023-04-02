@@ -30,7 +30,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Techbeans\\LaravelDatabaseConfiguration\\app\\Providers\\DbConfigServiceProvider"
+        "Techbeansjp\\LaravelDatabaseConfiguration\\app\\Providers\\DbConfigServiceProvider"
       ],
       "aliases": {
         "DbConfig": "Techbeansjp\\LaravelDatabaseConfiguration\\app\\Facades\\DbConfig"
