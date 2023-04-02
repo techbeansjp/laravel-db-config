@@ -3,7 +3,7 @@
   "description": "Get the database configuration connected in laravel",
   "type": "library",
   "license": "MIT",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "authors": [
     {
       "name": "adachi",
