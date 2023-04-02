@@ -3,7 +3,7 @@
 namespace Techbeansjp\LaravelDatabaseConfiguration\App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Techbeansjp\LaravelDatabaseConfiguration\App\Facades\DbConfig;
+use Techbeansjp\LaravelDatabaseConfiguration\App\Facades\DbConfigFacade;
 
 class DbConfigCommand extends Command
 {
@@ -30,7 +30,7 @@ class DbConfigCommand extends Command
     $markdown = '';
 
     // DbConfigService を使用して、データベース構造の markdown を取得
-    $markdown .= DbConfig::getMarkdown();
+    $markdown .= DbConfigFacade::getMarkdown();
 
     // $output を 表示
     $this->info($markdown);
