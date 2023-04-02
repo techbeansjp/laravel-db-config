@@ -1,6 +1,6 @@
 <?php
 
-namespace Techbeansjp\LaravelDatabaseConfiguration\App\Facades;
+namespace Techbeansjp\LaravelDbConfig\App\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

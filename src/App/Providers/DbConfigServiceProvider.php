@@ -1,10 +1,10 @@
 <?php
 
-namespace Techbeansjp\LaravelDatabaseConfiguration\App\Providers;
+namespace Techbeansjp\LaravelDbConfig\App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Techbeansjp\LaravelDatabaseConfiguration\App\Console\Commands\DbConfigCommand;
-use Techbeansjp\LaravelDatabaseConfiguration\App\Services\DbConfigService;
+use Techbeansjp\LaravelDbConfig\App\Console\Commands\DbConfigCommand;
+use Techbeansjp\LaravelDbConfig\App\Services\DbConfigService;
 
 class DbConfigServiceProvider extends ServiceProvider
 {

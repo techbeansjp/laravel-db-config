@@ -1,5 +1,5 @@
 {
-  "name": "techbeansjp/laravel-database-configuration",
+  "name": "techbeansjp/laravel-db-config",
   "description": "Get the database configuration connected in laravel",
   "type": "library",
   "license": "MIT",
@@ -12,12 +12,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "Techbeansjp\\LaravelDatabaseConfiguration\\": "src"
+      "Techbeansjp\\LaravelDbConfig\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Techbeansjp\\LaravelDatabaseConfiguration\\Tests\\": "tests"
+      "Techbeansjp\\LaravelDbConfig\\Tests\\": "tests"
     }
   },
   "require": {
@@ -30,10 +30,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Techbeansjp\\LaravelDatabaseConfiguration\\App\\Providers\\DbConfigServiceProvider"
+        "Techbeansjp\\LaravelDbConfig\\App\\Providers\\DbConfigServiceProvider"
       ],
       "aliases": {
-        "DbConfig": "Techbeansjp\\LaravelDatabaseConfiguration\\App\\Facades\\DbConfigFacade"
+        "DbConfig": "Techbeansjp\\LaravelDbConfig\\App\\Facades\\DbConfigFacade"
       }
     }
   }

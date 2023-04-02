@@ -1,6 +1,6 @@
 <?php
 
-namespace Techbeansjp\LaravelDatabaseConfiguration\App\Services;
+namespace Techbeansjp\LaravelDbConfig\App\Services;
 
 use Illuminate\Support\Facades\Schema;
 
