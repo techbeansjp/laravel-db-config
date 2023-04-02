@@ -3,7 +3,7 @@
 name: メインアクション
 
 on:
-  push:
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -14,10 +14,21 @@ jobs:
     steps:
       - name: "main action"
         run: echo "actions start"
+      - name: "github.event_name"
+        # このアクションは、 github.event_name を 表示
+        run: echo ${{ github.event_name }}
+      - name: "github.head_ref"
+        # このアクションは、 github.head_ref を 表示
+        run: echo ${{ github.head_ref }}
+      - name: "github.base_ref"
+        # このアクションは、 どのブランチに pull request があったかを 表示
+        run: echo ${{ github.base_ref }}
+      - name: "main end"
+        run: echo "actions end"
 
   call-workflow:
-    # develop, staging, mainブランチ pull_request が発生した場合のみ実行される
+    # develop, staging, mainブランチ に pull request があった場合に実行します。
     # 同一ディレクトリにある format.yml を呼び出し、実行する
+    if: github.event_name == 'pull_request' && (github.base_ref == 'develop' || github.base_ref == 'staging' || github.base_ref == 'main')
     needs: [main]
     uses: ./.github/workflows/format.yml
-    if: github.event_name == 'pull_request' && contains(github.event.pull_request.head.ref, 'develop') || contains(github.event.pull_request.head.ref, 'staging') || contains(github.event.pull_request.head.ref, 'main')
