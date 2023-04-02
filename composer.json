@@ -12,12 +12,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "Techbeansjp\\LaravelDatabaseConfiguration\\": "src"
+      "Techbeansjp\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Techbeansjp\\LaravelDatabaseConfiguration\\Tests\\": "tests"
+      "Techbeansjp\\Tests\\": "tests"
     }
   },
   "require": {
