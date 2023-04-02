@@ -2,7 +2,6 @@
   "name": "techbeansjp/laravel-database-configuration",
   "description": "Get the database configuration connected in laravel",
   "type": "library",
-  "version": "1.0.0",
   "license": "MIT",
   "minimum-stability": "stable",
   "authors": [
