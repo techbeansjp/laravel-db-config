@@ -12,12 +12,12 @@
   ],
   "autoload": {
     "psr-4": {
-      "Techbeansjp\\": "vendor/techbeansjp/src"
+      "Techbeansjp\\": "vendor/techbeansjp/laravel-database-configuration/src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Techbeansjp\\Tests\\": "vendor/techbeansjp/tests"
+      "Techbeansjp\\Tests\\": "vendor/techbeansjp/laravel-database-configuration/tests"
     }
   },
   "require": {
