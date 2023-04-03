@@ -8,3 +8,15 @@
 このパッケージは、Laravel が接続するデータベース構造を取得、表示するためのパッケージです。
 
 コマンドラインから実行することで、データベースの構造を取得し、Markdown 形式で出力します。
+
+下記コマンドで、install できます。
+
+```bash
+$ composer require techbeansjp/laravel-db-config
+```
+
+この機能を利用するには、下記のコマンドを実行します。
+
+```bash
+$ php artisan techbeansjp:get-tables
+```
