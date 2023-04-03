@@ -3,7 +3,7 @@
 namespace Techbeansjp\LaravelDbConfig\App\Console\Commands;
 
 use Illuminate\Console\Command;
-use DbConfigFacade;
+use Techbeansjp\LaravelDbConfig\App\Facades\DbConfigFacade;
 
 class DbConfigCommand extends Command
 {
